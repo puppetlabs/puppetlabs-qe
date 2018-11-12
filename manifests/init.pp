@@ -1,7 +1,5 @@
 class qe {
 
-  include qe::packages
-
   group { 'docker':
     ensure => present,
     gid    => 654
@@ -39,5 +37,3 @@ class qe {
   }
 
 }
-
-include qe
