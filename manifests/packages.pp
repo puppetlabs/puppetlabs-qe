@@ -7,7 +7,8 @@ class qe::packages {
 
   package {
     'ca-certificates-java':
-      ensure => '20161107~bpo8+1'
+      ensure => '20161107~bpo8+1',
+      require => [Apt::Source['jessie_backports']]
       ;
     [
       'apt-transport-https',
