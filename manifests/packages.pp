@@ -8,6 +8,7 @@ class qe::packages {
   package {
     'ca-certificates-java':
       ensure => '20161107~bpo8+1'
+      ;
     [
       'apt-transport-https',
       'apt',
