@@ -2,9 +2,13 @@ class qe {
 
   include stdlib
 
-  group { 'docker':
-    ensure => present,
-    gid    => 654
+  group {
+    'docker':
+      gid => 654
+      ;
+    'jenkins':
+      gid => 624
+      ;
   }
 
   user { 'jenkins':
