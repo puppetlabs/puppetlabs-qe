@@ -27,7 +27,8 @@ class qe::packages {
       'netabse',
       'wget'
     ]:
-      ensure => latest
+      ensure  => latest,
+      require => Apt::Source['jessie_backports']
   }
 
 }
