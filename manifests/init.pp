@@ -1,5 +1,7 @@
 class qe {
 
+  include stdlib
+
   group { 'docker':
     ensure => present,
     gid    => 654
