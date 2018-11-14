@@ -6,6 +6,8 @@ class qe::packages {
   }
 
   package {
+    'ca-certificates-java':
+      ensure => '20161107~bpo8+1'
     [
       'apt-transport-https',
       'apt',
@@ -16,19 +18,22 @@ class qe::packages {
       'debian-goodies',
       'gnupg2',
       'keychain',
-      'ca-certificates-java',
-      'openjdk-8-jre-headless',
-      'openjdk-8-jdk',
       'less',
       'lsb-release',
       'locales',
+      'openjdk-8-jdk',
+      'openjdk-8-jre-headless',
       'software-properties-common',
       'sudo',
       'netabse',
       'wget'
     ]:
       ensure  => latest,
-      require => Apt::Source['jessie_backports']
+      require => [
+        Apt::Source['jessie_backports'],
+        Package['ca-certificates-java']
+      ]
+      ;
   }
 
 }
