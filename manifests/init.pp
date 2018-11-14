@@ -12,7 +12,7 @@ class qe {
     uid    => 22002,
     gid    => 624,
     home   => '/var/lib/jenkins',
-    group  => 'jenkins'
+    groups => 'jenkins'
   }
 
   file_line { 'default_locale':
