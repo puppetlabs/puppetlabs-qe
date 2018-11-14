@@ -14,11 +14,12 @@ class qe {
   }
 
   user { 'jenkins':
-    ensure => present,
-    uid    => 22002,
-    gid    => 624,
-    home   => '/var/lib/jenkins',
-    groups => 'jenkins'
+    ensure     => present,
+    uid        => 22002,
+    gid        => 624,
+    home       => '/var/lib/jenkins',
+    groups     => 'jenkins',
+    managehome => true
   }
 
   file_line { 'default_locale':
