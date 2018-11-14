@@ -1,7 +1,8 @@
 class qe::packages {
 
   apt::source { 'jessie_backports':
-    location => 'http://deb.debian.org/debian jessie-backports'
+    location => 'http://deb.debian.org/debian',
+    release  => 'jessie-backports'
   }
 
   package {
