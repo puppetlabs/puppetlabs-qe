@@ -27,7 +27,7 @@ class qe::packages {
       'openjdk-8-jre-headless',
       'software-properties-common',
       'sudo',
-      'netabse',
+      'netbase',
       'wget'
     ]:
       ensure  => latest,
