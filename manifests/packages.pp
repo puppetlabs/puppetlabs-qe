@@ -36,6 +36,21 @@ class qe::packages {
         Package['ca-certificates-java']
       ]
       ;
+    'openjdk-7-jre-headless:amd64':
+      ensure => absent
+      ;
+  }
+
+  file_line { 'default_locale':
+    ensure  => present,
+    path    => '/etc/locale.gen',
+    line    => 'en_US.UTF-8 UTF-8',
+    match   => '# en_US.UTF-8 UTF-8',
+    require => Package['locales']
+  }
+
+  exec { '/usr/sbin/locale-gen en_US.UTF-8':
+    require => File_line['default_locale']
   }
 
 }
