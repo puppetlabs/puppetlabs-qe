@@ -37,7 +37,8 @@ class qe::packages {
       ]
       ;
     'openjdk-7-jre-headless':
-      ensure => absent
+      ensure  => absent,
+      require => Package['ca-certificates-java']
       ;
   }
 
